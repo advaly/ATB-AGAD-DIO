@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-ATB-AGAD-DOI Sample code
+ATB-AGAD-DIO Sample code
 Copyright 2021 ADVALY SYSTEM Inc.
 
 DI: /sys/devices/soc0/addon/DIx_INTF1/value
