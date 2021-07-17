@@ -1,8 +1,8 @@
-# ATB-AGAD-DOI Sample code
+# ATB-AGAD-DIO Sample code
 
-Armadillo拡張ボードのATB-AGAD-DOIをPythonから制御するときのサンプルコードです。
+Armadillo拡張ボードのATB-AGAD-DIOをPythonから制御するときのサンプルコードです。
 
-Armadilloは株式会社アットマークテクノの製品、ATB-AGAD-DOIはアドバリーシステム株式会社の製品です。
+Armadilloは株式会社アットマークテクノの製品、ATB-AGAD-DIOはアドバリーシステム株式会社の製品です。
 
 ## 使用方法
 
