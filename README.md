@@ -66,6 +66,8 @@ DO1 = 1
 
 ## SWの組み合わせと有効なポート
 
+※ 起動時に一度SW1、SW2の値を読んで処理を分岐しており、ランタイムでのSWの切り替えには対応しておりません。
+
 ### SW1=DI側、SW2=DI側
 
 DI0|DI1|DI2|DI3|DI4|DI5|DI6|DI7|DO0|DO1
@@ -89,3 +91,29 @@ IN |IN |IN |IN |-  |-  |IN |IN |OUT|-
 DI0|DI1|DI2|DI3|DI4|DI5|DI6|DI7|DO0|DO1
 -- |-- |-- |-- |-- |-- |-- |-- |-- |--
 IN |IN |IN |IN |-  |-  |-  |-  |OUT|OUT
+
+## DI/DOポートへのアクセスについて
+
+### クラスファイル名
+
+以下のファイルによって制御することができます。
+`DIx`, `DOx` の `x` は、DO/DIの各インデックスを意味します。
+
+DI/DO | Direction | Path
+--|--|--
+DI | IN | `/sys/devices/soc0/addon/DIx_INTF1/value`
+DO | OUT | `/sys/devices/soc0/addon/DOx_INTF1/value`
+
+
+### 例
+
+DI2の状態を取得する。
+```
+[armadillo ~]# cat /sys/devices/soc0/addon/DI2_INTF1/value
+1
+```
+
+DO0の状態を取得する。
+```
+[armadillo ~]# echo 1 > /sys/devices/soc0/addon/DO0_INTF1/value
+```
