@@ -4,6 +4,10 @@ Armadillo拡張ボードのATB-AGAD-DIOをPythonから制御するときのサ�
 
 Armadilloは株式会社アットマークテクノの製品、ATB-AGAD-DIOはアドバリーシステム株式会社の製品です。
 
+## 動作環境
+
+本サンプルはArmadillo-X1で確認しています。
+Armadillo-IoT G3の場合については後述します。
 ## 使用方法
 
 ### 値の取得
@@ -66,7 +70,7 @@ DO1 = 1
 
 ## SWの組み合わせと有効なポート
 
-※ 起動時に一度SW1、SW2の値を読んで処理を分岐しており、ランタイムでのSWの切り替えには対応しておりません。
+ATB-AGAD-DIOアドオンボードはArmadlloの起動時にボード上のSW1,SW2を判別してモードが変わります。ランタイムでのSWの切り替えには対応しておりません。
 
 ### SW1=DI側、SW2=DI側
 
@@ -104,6 +108,24 @@ DI/DO | Direction | Path
 DI | IN | `/sys/devices/soc0/addon/DIx_INTF1/value`
 DO | OUT | `/sys/devices/soc0/addon/DOx_INTF1/value`
 
+### Armadillo-IoT G3の場合
+
+Armadillo-X1ではなくArmadillo-IoT G3の場合は、`INTFy` の `y` が以下のように見えます。
+
+- CON1に接続: 1
+- CON2に接続: 2
+
+#### CON1に接続
+DI/DO | Direction | Path
+--|--|--
+DI | IN | `/sys/devices/soc0/addon/DIx_INTF1/value`
+DO | OUT | `/sys/devices/soc0/addon/DOx_INTF1/value`
+
+#### CON2に接続
+DI/DO | Direction | Path
+--|--|--
+DI | IN | `/sys/devices/soc0/addon/DIx_INTF2/value`
+DO | OUT | `/sys/devices/soc0/addon/DOx_INTF2/value`
 
 ### 例
 
