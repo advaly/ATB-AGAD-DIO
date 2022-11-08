@@ -70,7 +70,7 @@ DO1 = 1
 
 ## SWの組み合わせと有効なポート
 
-ATB-AGAD-DIOアドオンボードはArmadlloの起動時にボード上のSW1,SW2を判別してモードが変わります。ランタイムでのSWの切り替えには対応しておりません。
+ATB-AGAD-DIOアドオンボードはArmadlloのOS起動時にボード上のSW1,SW2を判別してモードが変わります。ランタイムでのSWの切り替えには対応しておりません。
 
 ### SW1=DI側、SW2=DI側
 
@@ -135,7 +135,7 @@ DI2の状態を取得する。
 1
 ```
 
-DO0の状態を取得する。
+DO0に1を出力する。
 ```
 [armadillo ~]# echo 1 > /sys/devices/soc0/addon/DO0_INTF1/value
 ```
