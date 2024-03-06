@@ -4,8 +4,8 @@
 ATB-AGAD-DIO Sample code
 Copyright 2021 ADVALY SYSTEM Inc.
 
-DI: /sys/devices/soc0/addon/DIx_INTF1/value
-DO: /sys/devices/soc0/addon/DOx_INTF1/value
+DI: /sys/devices/platform/addon/DIx_INTF1/value
+DO: /sys/devices/platform/addon/DOx_INTF1/value
 
 　起動時のSWの状態によってexportされるディレクトリが以下のように変化します。
   - SW1
@@ -39,7 +39,7 @@ def DI(num):
     if num < 0 or num > 7:
         raise ValueError('Invalid DI port number')
 
-    value = open('/sys/devices/soc0/addon/DI%d_INTF1/value' % num, 'r').readline()
+    value = open('/sys/devices/platform/addon/DI%d_INTF1/value' % num, 'r').readline()
     return int(value)
 
 
@@ -63,9 +63,9 @@ def DO(num, outval=None):
         raise ValueError('Invalid DO port number')
 
     if outval == None:
-        value = open('/sys/devices/soc0/addon/DO%d_INTF1/value' % num, 'r').readline()
+        value = open('/sys/devices/platform/addon/DO%d_INTF1/value' % num, 'r').readline()
     elif outval == 0 or outval == 1:
-        open('/sys/devices/soc0/addon/DO%d_INTF1/value' % num, 'w').write(str(outval))
+        open('/sys/devices/platform/addon/DO%d_INTF1/value' % num, 'w').write(str(outval))
         value = outval
     else:
         raise ValueError('Invalid DO value')

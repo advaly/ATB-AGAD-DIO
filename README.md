@@ -105,8 +105,8 @@ IN |IN |IN |IN |-  |-  |-  |-  |OUT|OUT
 
 DI/DO | Direction | Path
 --|--|--
-DI | IN | `/sys/devices/soc0/addon/DIx_INTF1/value`
-DO | OUT | `/sys/devices/soc0/addon/DOx_INTF1/value`
+DI | IN | `/sys/devices/platform/addon/DIx_INTF1/value`
+DO | OUT | `/sys/devices/platform/addon/DOx_INTF1/value`
 
 ### Armadillo-IoT G3の場合
 
@@ -118,24 +118,24 @@ Armadillo-X1ではなくArmadillo-IoT G3の場合は、`INTFy` の `y` が以下
 #### CON1に接続
 DI/DO | Direction | Path
 --|--|--
-DI | IN | `/sys/devices/soc0/addon/DIx_INTF1/value`
-DO | OUT | `/sys/devices/soc0/addon/DOx_INTF1/value`
+DI | IN | `/sys/devices/platform/addon/DIx_INTF1/value`
+DO | OUT | `/sys/devices/platform/addon/DOx_INTF1/value`
 
 #### CON2に接続
 DI/DO | Direction | Path
 --|--|--
-DI | IN | `/sys/devices/soc0/addon/DIx_INTF2/value`
-DO | OUT | `/sys/devices/soc0/addon/DOx_INTF2/value`
+DI | IN | `/sys/devices/platform/addon/DIx_INTF2/value`
+DO | OUT | `/sys/devices/platform/addon/DOx_INTF2/value`
 
 ### 例
 
 DI2の状態を取得する。
 ```
-[armadillo ~]# cat /sys/devices/soc0/addon/DI2_INTF1/value
+[armadillo ~]# cat /sys/devices/platform/addon/DI2_INTF1/value
 1
 ```
 
 DO0に1を出力する。
 ```
-[armadillo ~]# echo 1 > /sys/devices/soc0/addon/DO0_INTF1/value
+[armadillo ~]# echo 1 > /sys/devices/platform/addon/DO0_INTF1/value
 ```
